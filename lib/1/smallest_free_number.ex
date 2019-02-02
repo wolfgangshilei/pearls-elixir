@@ -6,7 +6,7 @@ defmodule SmallestFreeNumber do
   """
 
   @doc """
-  Solution based on divide and conquer
+  Solution based on divide and conquer. Runs in linear time based on the input size.
 
   ## Examples
 
@@ -22,9 +22,8 @@ defmodule SmallestFreeNumber do
     min_from(0, xs)
   end
 
-  def min_from(a, xs) when length(xs) == 0, do: a
-
-  def min_from(a, xs) do
+  defp min_from(a, xs) when length(xs) == 0, do: a
+  defp min_from(a, xs) do
     ## Select b
     b = a + 1 + (xs |> length |> div(2))
 
